@@ -4,296 +4,203 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Joseph Peck">
-  <meta name="description" content="Joseph Peck's HTML portfolio page, built with unusual HTML elements.">
-  <meta name="keywords" content="Joseph Peck, portfolio, HTML, web development, creativity">
+  <meta name="description" content="Joseph Peck's portfolio page: web development, creative practice.">
+  <meta name="keywords" content="Joseph Peck, portfolio, HTML, CSS, web development, creativity">
   <meta name="theme-color" content="#111111">
   <title>Joseph Peck's Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=IM+Fell+English:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
-<!-- Background design -->
-<body id="top" background="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Crect width='80' height='80' fill='%23101010'/%3E%3Cpath d='M0 40 H80 M40 0 V80' stroke='%23222222' stroke-width='1'/%3E%3Ccircle cx='40' cy='40' r='25' fill='none' stroke='%23181818'/%3E%3C/svg%3E" text="#e8e1d0" link="#d6b15e" vlink="#8f6f37" alink="#ffffff">
+<body id="top">
+  <header class="site-header">
+    <nav class="nav-wrap" aria-label="Main navigation">
+      <a class="nav-mark" href="#top">JP</a>
+      <ul class="nav-links">
+        <li><a href="#About">About</a></li>
+        <li><a href="#Experience">Experience</a></li>
+        <li><a href="#Skills">Skills</a></li>
+        <li><a href="#Projects">Projects</a></li>
+        <li><a href="#Connect">Connect</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <center>
-    <table width="96%" cellpadding="18" cellspacing="0" border="1" bordercolor="#3b3327" bgcolor="#151515">
-      <tr>
-        <td>
-          <center>
-            <h1>
-              <font face="Georgia, Times New Roman, serif" color="#f3e6c3">
-                Joseph Peck
-              </font>
-            </h1>
+  <main class="page-shell">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-frame">
+        <p class="eyebrow">a portfolio / a strange page / a working craft</p>
+        <h1 id="page-title">Joseph Peck</h1>
+        <p class="tagline">builder of hidden worlds, strange pages, and what refuses burial</p>
+        <div class="relic-ticker" aria-label="Decorative portfolio statement">
+          <span>An HTML-born portfolio · now dressed in CSS · the old days still singing</span>
+        </div>
+      </div>
+    </section>
 
-            <font face="Georgia, Times New Roman, serif" size="4" color="#bca66b">
-              <i>builder of hidden worlds, strange pages, and what refuses burial</i>
-            </font>
+    <div class="content-grid">
+      <aside class="side-panel" aria-label="Personal signs">
+        <section class="card sign-card">
+          <h2>Signs</h2>
 
-            <hr width="72%" color="#6d5735">
+          <label for="light">Light</label>
+          <meter id="light" min="0" max="100" value="74">74%</meter>
 
-            <marquee behavior="alternate" scrollamount="3" width="70%">
-              <font color="#9f8c5b">An HTML only portfolio · no CSS · no JavaScript · just the old days singing</font>
-            </marquee>
-          </center>
-        </td>
-      </tr>
-    </table>
-  </center>
+          <label for="growth">Growth</label>
+          <progress id="growth" max="100" value="63">63%</progress>
 
-  <br>
+          <label for="echoes">Echoes</label>
+          <meter id="echoes" min="0" max="100" value="88">88%</meter>
 
-  <!-- navigation box -->
-  <center>
-    <table width="96%" cellpadding="14" cellspacing="8" border="0">
-      <tr valign="top">
-        <td width="25%">
-          <nav>
-            <table width="100%" cellpadding="12" cellspacing="0" border="1" bordercolor="#3b3327" bgcolor="#191919">
-              <tr>
-                <th bgcolor="#242018">
-                  <font face="Georgia" color="#f0dca2" size="4">Navigation</font>
-                </th>
-              </tr>
-              <tr>
-                <td>
-                  <font face="Georgia" size="3">
-                    <a href="#About">About</a><br><br>
-                    <a href="#Experience">Experience</a><br><br>
-                    <a href="#Connect">Connect</a><br><br>
-                    <a href="#Relics">HTML Relics</a>
-                  </font>
-                </td>
-              </tr>
-            </table>
-          </nav>
+          <q>What is buried may still rise.</q>
+        </section>
 
-          <br>
-<!-- progression/mood bars -->
-          <fieldset>
-            <legend><font face="Georgia" color="#f0dca2">Signs</font></legend>
+        <section class="card symbol-card">
+          <h2>Symbols</h2>
+          <ul>
+            <li>☾ Quiet guidance</li>
+            <li>✿ Patient growth</li>
+            <li>⚰ Kept fragments</li>
+          </ul>
+        </section>
+      </aside>
 
-            <font face="Georgia" size="2">
-              Light:<br>
-              <meter min="0" max="100" value="74">74%</meter><br><br>
+      <div class="main-column">
+        <section id="About" class="card section-card">
+          <h2>About</h2>
+          <p>
+            I am learning to turn scattered curiosity into working structures through coding, design,
+            writing, music, art, and the kinds of discipline that survives ordinary days. I like projects
+            that feel half practical and half mythic. Something useful on the surface, but something
+            stranger underneath.
+          </p>
 
-              Growth:<br>
-              <progress max="100" value="63">63%</progress><br><br>
+          <blockquote>
+            “A page can be plain yet still have atmosphere. A skill can begin clumsy yet still become a craft.”
+          </blockquote>
 
-              Echoes:<br>
-              <meter min="0" max="100" value="88">88%</meter><br><br>
+          <details open>
+            <summary>What I am building toward</summary>
+            <p>
+              A future where creativity and technical skill are not separate lives. I want to understand systems,
+              make useful things, and keep enough artistic nerve to avoid becoming mechanical.
+            </p>
+          </details>
 
-              <q>What is buried may still rise.</q>
-            </font>
-          </fieldset>
-        </td>
-<!-- about me -->
-        <td width="75%">
-          <main>
-            <section id="About">
-              <table width="100%" cellpadding="18" cellspacing="0" border="1" bordercolor="#3b3327" bgcolor="#181818">
-                <tr>
-                  <td>
-                    <h2>
-                      <font face="Georgia" color="#f0dca2">About</font>
-                    </h2>
+          <details>
+            <summary>Small symbols</summary>
+            <dl>
+              <dt>The Moon</dt>
+              <dd>Quiet guidance; progress made even when the whole road is not visible.</dd>
 
-                    <p>
-                      <font face="Georgia" size="4">
-                        I am learning to turn scattered curiosity into working structures through coding, design,
-                        writing, music, art, and the kinds of discipline that survives ordinary days. I like projects
-                        that feel half practical and half mythic; something useful on the surface, but something
-                        stranger underneath.
-                      </font>
-                    </p>
+              <dt>The Garden</dt>
+              <dd>Growth that cannot be rushed, only tended with patience and return.</dd>
 
-                    <blockquote>
-                      <font face="Georgia" color="#d7c18c" size="4">
-                        “A page can be plain yet still have atmosphere. A skill can begin clumsy yet still become a craft.”
-                      </font>
-                    </blockquote>
+              <dt>The Crypts</dt>
+              <dd>A chamber of kept fragments: lessons, failures, old passions, and pieces worth carrying forward.</dd>
+            </dl>
+          </details>
+        </section>
 
-                    <details open>
-                      <summary><font face="Georgia" color="#f0dca2"><b>What I am building toward</b></font></summary>
-                      <p>
-                        <font face="Georgia" size="3">
-                          A future where creativity and technical skill are not separate lives. I want to understand systems,
-                          make useful things, and keep enough artistic nerve to avoid becoming mechanical.
-                        </font>
-                      </p>
-                    </details>
+        <section id="Experience" class="card section-card">
+          <h2>Experience</h2>
 
-                    <details>
-                      <summary><font face="Georgia" color="#f0dca2"><b>Small personal symbols</b></font></summary>
-                      <dl>
-                        <dt><font color="#d6b15e"><b>The Moon</b></font></dt>
-                        <dd>Quiet guidance; progress made even when the whole road is not visible.</dd>
+          <ul class="experience-list">
+            <li>
+              <div class="experience-heading">
+                <h3>Food Service</h3>
+                <span>Practical work</span>
+              </div>
+              <p>Customer service, speed, cleanliness, pressure, routine, and practical responsibility.</p>
+              <samp>reliable under pressure</samp>
+            </li>
 
-                        <dt><font color="#d6b15e"><b>The Garden</b></font></dt>
-                        <dd>Growth that cannot be rushed, only tended with patience and return.</dd>
+            <li>
+              <div class="experience-heading">
+                <h3>Web Development</h3>
+                <span>Current study</span>
+              </div>
+              <p>HTML, CSS, JavaScript fundamentals, debugging, GitHub, and Git.</p>
+              <samp>developer in progress</samp>
+            </li>
 
-                        <dt><font color="#d6b15e"><b>The Crypts</b></font></dt>
-                        <dd>A chamber of kept fragments: lessons, failures, old passions, and pieces worth carrying forward.</dd>
-                      </dl>
-                    </details>
-                  </td>
-                </tr>
-              </table>
-            </section>
+            <li>
+              <div class="experience-heading">
+                <h3>Creative Practice</h3>
+                <span>Ongoing craft</span>
+              </div>
+              <p>Gothic and horror songwriting, visual design, game development, and world-building.</p>
+              <samp>atmosphere matters</samp>
+            </li>
+          </ul>
 
-            <br>
-<!-- Experience -->
-            <section id="Experience">
-              <table width="100%" cellpadding="18" cellspacing="0" border="1" bordercolor="#3b3327" bgcolor="#181818">
-                <tr>
-                  <td>
-                    <h2>
-                      <font face="Georgia" color="#f0dca2">Experience</font>
-                    </h2>
+          <p class="glyph-row" aria-hidden="true">☾ · ✿ · ⚰</p>
+        </section>
 
-                    <ul>
-                      <li>
-                        <font face="Georgia">
-                          <b>Food Service:</b> customer service, speed, cleanliness, pressure, routine, and practical responsibility.
-                        </font>
-                      </li>
-                      <li>
-                        <font face="Georgia">
-                          <b>Web Development:</b> HTML, JavaScript fundamentals, debugging, GitHub, and Git.
-                        </font>
-                      </li>
-                      <li>
-                        <font face="Georgia">
-                          <b>Creative Practice:</b> gothic and horror songwriting, visual design, game development, and world-building.
-                        </font>
-                      </li>
-                    </ul>
+        <section id="Skills" class="card section-card empty-section">
+          <h2>Skills</h2>
+        </section>
 
-                    <br>
+        <section id="Projects" class="card section-card empty-section">
+          <h2>Projects</h2>
+          <ul class="project-list"></ul>
+        </section>
 
-                    <table width="100%" cellpadding="10" cellspacing="0" border="1" bordercolor="#2c261e">
-                      <tr bgcolor="#242018">
-                        <th><font face="Georgia" color="#f0dca2">Area</font></th>
-                        <th><font face="Georgia" color="#f0dca2">Work</font></th>
-                        <th><font face="Georgia" color="#f0dca2">Signal</font></th>
-                      </tr>
-                      <tr>
-                        <td><font face="Georgia"><b>Food Service</b></font></td>
-                        <td><font face="Georgia">Customer service, speed, cleanliness, pressure, routine, and practical responsibility.</font></td>
-                        <td><font face="Georgia"><samp>reliable under pressure</samp></font></td>
-                      </tr>
-                      <tr>
-                        <td><font face="Georgia"><b>Web Development</b></font></td>
-                        <td><font face="Georgia">HTML, JavaScript fundamentals, debugging, GitHub, and Git.</font></td>
-                        <td><font face="Georgia"><samp>developer in progress</samp></font></td>
-                      </tr>
-                      <tr>
-                        <td><font face="Georgia"><b>Creative Practice</b></font></td>
-                        <td><font face="Georgia">Songs of gothic and horror, visual design, game development, and world-building.</font></td>
-                        <td><font face="Georgia"><samp>atmosphere matters</samp></font></td>
-                      </tr>
-                    </table>
+        <section id="Connect" class="card section-card">
+          <h2>Connect</h2>
 
-                    <br>
+          <ul class="connect-list">
+            <li><a href="https://github.com/Joeypeck1987" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/joey-peck-66233b329/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="mailto:Joeypeck1987@gmail.com">Email</a></li>
+            <li><a href="#top">Return to the top</a></li>
+          </ul>
 
-                    <center>
-                      <font face="Georgia" color="#bca66b" size="5">
-                        ☾ &nbsp; · &nbsp; ✿ &nbsp; · &nbsp; ⚰
-                      </font>
-                    </center>
-                  </td>
-                </tr>
-              </table>
-            </section>
+          <form action="mailto:Joeypeck1987@gmail.com" method="post" enctype="text/plain" class="contact-form">
+            <fieldset>
+              <legend>Contact, by old machinery</legend>
 
-            <br>
-<!-- Connection -->
-            <section id="Connect">
-              <table width="100%" cellpadding="18" cellspacing="0" border="1" bordercolor="#3b3327" bgcolor="#181818">
-                <tr>
-                  <td>
-                    <h2>
-                      <font face="Georgia" color="#f0dca2">Connection</font>
-                    </h2>
+              <label for="name">Your name:</label>
+              <input id="name" name="name" size="30">
 
-                    <ul>
-                      <li><a href="https://github.com/Joeypeck1987" target="_blank">GitHub</a></li>
-                      <li><a href="https://www.linkedin.com/in/joey-peck-66233b329/" target="_blank">LinkedIn</a></li>
-                      <li><a href="mailto:Joeypeck1987@gmail.com">Email</a></li>
-                      <li><a href="#top">Return to the top</a></li>
-                    </ul>
+              <label for="subject">Choose a subject:</label>
+              <input id="subject" list="subjects" name="subject">
+              <datalist id="subjects">
+                <option value="Portfolio"></option>
+                <option value="Collaboration"></option>
+                <option value="Job Opportunity"></option>
+                <option value="Creative Project"></option>
+              </datalist>
 
-                    <form action="mailto:Joeypeck1987@gmail.com" method="post" enctype="text/plain">
-                      <fieldset>
-                        <legend><font face="Georgia" color="#f0dca2">Contact, by old machinery</font></legend>
+              <label for="message">Message:</label>
+              <textarea id="message" name="message" rows="5">Hello Joseph,</textarea>
 
-                        <label>Your name: <input name="name" size="30"></label><br><br>
+              <div class="button-row">
+                <button type="submit">Send via email client</button>
+                <button type="reset">Clear</button>
+              </div>
+            </fieldset>
+          </form>
+        </section>
 
-                        <label>Choose a subject:
-                          <input list="subjects" name="subject">
-                          <datalist id="subjects">
-                            <option value="Portfolio">
-                            <option value="Collaboration">
-                            <option value="Job Opportunity">
-                            <option value="Creative Project">
-                          </datalist>
-                        </label><br><br>
+        <section id="Relics" class="card section-card relics-card">
+          <h2>Relics</h2>
+          <p>
+            This page began with old and unusual HTML features. Some were obsolete, some uncommon,
+            and some still valid but rarely seen. The effect remains part portfolio, part internet cabinet of curiosities.
+          </p>
 
-                        <label>Message:<br>
-                          <textarea name="message" rows="5" cols="55">Hello Joseph,</textarea>
-                        </label><br><br>
+          <div class="relic-table" aria-label="Portfolio relic information">
+            <span><bdo dir="rtl">Joseph Peck</bdo></span>
+            <time datetime="2026-05-06">May 6, 2026</time>
+          </div>
 
-                        <button type="submit">Send via email client</button>
-                        <button type="reset">Clear</button>
-                      </fieldset>
-                    </form>
-                  </td>
-                </tr>
-              </table>
-            </section>
-
-            <br>
-<!-- Footer section -->
-            <section id="Relics">
-              <table width="100%" cellpadding="18" cellspacing="0" border="1" bordercolor="#3b3327" bgcolor="#181818">
-                <tr>
-                  <td>
-                    <h2>
-                      <font face="Georgia" color="#f0dca2">HTML Relics</font>
-                    </h2>
-
-                    <p>
-                      <font face="Georgia">
-                        This page is deliberately made with old and unusual HTML features. Some are obsolete, some are uncommon,
-                        and some are still valid but rarely seen. The effect is part portfolio, part internet cabinet of my own curiosities.
-                      </font>
-                    </p>
-
-                    <center>
-                      <table cellpadding="8" cellspacing="0" border="1" bordercolor="#2c261e">
-                        <tr>
-                          <td><bdo dir="rtl">Joseph Peck</bdo></td>
-                          <td><time datetime="2026-04-29">April 29, 2026</time></td>
-                        </tr>
-                      </table>
-                    </center>
-
-                    <br>
-
-                    <address>
-                      <font face="Georgia" color="#bca66b">
-                        Joseph Peck · a portfolio page in HTML
-                      </font>
-                    </address>
-                  </td>
-                </tr>
-              </table>
-            </section>
-          </main>
-        </td>
-      </tr>
-    </table>
-  </center>
-
-  <br>
-
+          <address>Joseph Peck · a portfolio page</address>
+        </section>
+      </div>
+    </div>
+  </main>
 </body>
 </html>
