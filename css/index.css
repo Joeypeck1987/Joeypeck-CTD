@@ -992,3 +992,8 @@ code {
     flex-direction: column;
   }
 }
+
+/* Keep the blog index from floating awkwardly on desktop */
+.blog-index {
+  position: static;
+}
