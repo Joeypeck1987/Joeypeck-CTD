@@ -1,234 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="Joseph Peck">
-  <meta name="description" content="Joseph Peck's portfolio page: web development, music, lyrics, and creative practice.">
-  <meta name="keywords" content="Joseph Peck, portfolio, HTML, CSS, web development, music, lyrics, creativity">
-  <meta name="theme-color" content="#111111">
-  <title>Joseph Peck's Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=IM+Fell+English:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/index.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eidolon Sleep - HTML/CSS Recreation</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #111;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+      /* entry link */
+    .entry-link {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .poster {
+      position: relative;
+      width: min(100vw, 1024px);
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 47%, rgba(255,255,255,0.08), transparent 19%),
+        radial-gradient(circle at 50% 72%, rgba(255,255,255,0.04), transparent 18%),
+        linear-gradient(#151716, #101211 70%, #0d0e0e);
+    }
+
+     .entry-link:hover .poster,
+    .entry-link:focus-visible .poster {
+      filter: brightness(1.08);
+      transform: scale(1.01);
+    }
+    
+    .poster::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 22%, rgba(255,255,255,0.035), transparent 20%),
+        radial-gradient(circle at 78% 25%, rgba(255,255,255,0.025), transparent 20%),
+        repeating-radial-gradient(circle at 45% 40%, rgba(255,255,255,0.022) 0 1px, transparent 1px 9px);
+      opacity: 0.35;
+      mix-blend-mode: screen;
+    }
+
+    .scene {
+      position: absolute;
+      inset: 0;
+      top: 120px;
+    }
+
+    /* Crescent moon */
+    .moon {
+      position: absolute;
+      left: 50%;
+      top: 72px;
+      width: 320px;
+      height: 320px;
+      transform: translateX(-50%) rotate(-18deg);
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 40% 45%, rgba(255,255,255,0.98), rgba(245,245,240,0.95) 35%, rgba(215,215,205,0.94) 61%, rgba(255,255,255,0.98) 100%);
+      filter: drop-shadow(0 0 12px rgba(255,255,255,0.22));
+    }
+
+    .moon::before {
+      content: "";
+      position: absolute;
+      left: 105px;
+      top: -10px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: #151716;
+      box-shadow: inset 20px 0 30px rgba(0,0,0,0.18);
+    }
+
+    .moon::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 36% 28%, rgba(100,100,100,0.20) 0 5px, transparent 6px),
+        radial-gradient(circle at 28% 42%, rgba(90,90,90,0.18) 0 8px, transparent 9px),
+        radial-gradient(circle at 42% 56%, rgba(100,100,100,0.18) 0 6px, transparent 7px),
+        radial-gradient(circle at 24% 61%, rgba(120,120,120,0.16) 0 4px, transparent 5px),
+        radial-gradient(circle at 52% 70%, rgba(80,80,80,0.15) 0 7px, transparent 8px);
+      opacity: 0.8;
+      clip-path: circle(50% at 50% 50%);
+    }
+
+    /* Ground mist */
+    .mist {
+      position: absolute;
+      left: 50%;
+      top: 430px;
+      width: 460px;
+      height: 65px;
+      transform: translateX(-50%);
+      opacity: 0.58;
+      background:
+        radial-gradient(ellipse at 18% 55%, rgba(245,245,245,0.24), transparent 46%),
+        radial-gradient(ellipse at 50% 45%, rgba(245,245,245,0.42), transparent 44%),
+        radial-gradient(ellipse at 82% 55%, rgba(245,245,245,0.24), transparent 46%),
+        linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.12) 18%, rgba(255,255,255,0.20) 50%, rgba(255,255,255,0.12) 82%, transparent 100%);
+      filter: blur(4px);
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 18%, black 82%, transparent 100%);
+      mask-image: linear-gradient(90deg, transparent 0%, black 18%, black 82%, transparent 100%);
+    }
+
+    .ground-line {
+      position: absolute;
+      left: 50%;
+      top: 492px;
+      width: 820px;
+      height: 2px;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 20%, rgba(255,255,255,0.72) 50%, rgba(255,255,255,0.18) 80%, transparent 100%);
+      opacity: 0.75;
+    }
+
+    /* Wordmark */
+    .title {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 612px;
+      text-align: center;
+      color: #f7f7f4;
+      font-size: clamp(3.7rem, 8vw, 6rem);
+      line-height: 1;
+      letter-spacing: 0.03em;
+      font-variant: small-caps;
+      text-shadow: 0 2px 1px rgba(0,0,0,0.8), 0 0 8px rgba(255,255,255,0.12);
+    }
+
+    .title span {
+      display: inline-block;
+      margin: 0 0.18em;
+    }
+
+    .star {
+      position: absolute;
+      left: 50%;
+      top: 778px;
+      width: 14px;
+      height: 14px;
+      transform: translateX(-50%) rotate(45deg);
+      background: #f5f5f0;
+      clip-path: polygon(50% 0, 63% 37%, 100% 50%, 63% 63%, 50% 100%, 37% 63%, 0 50%, 37% 37%);
+      filter: drop-shadow(0 0 4px rgba(255,255,255,0.55));
+    }
+
+    @media (max-width: 700px) {
+      .scene { transform: scale(0.78); transform-origin: 50% 0; }
+      .title { top: 58%; }
+      .star { top: 70%; }
+    }
+  </style>
 </head>
+<body>
+<a class="entry-link" href="home.html" aria-label="Enter portfolio">
+  <main class="poster" aria-label="Eidolon Sleep black and white crescent moon">
+    <section class="scene">
+      <div class="moon"></div>
 
-<body id="top">
-  <header class="site-header">
-    <nav class="nav-wrap" aria-label="Main navigation">
-      <a class="nav-mark" href="#top">JP</a>
-      <ul class="nav-links">
-        <li><a href="#About">About</a></li>
-        <li><a href="#Experience">Experience</a></li>
-        <li><a href="#Skills">Skills</a></li>
-        <li><a href="#Projects">Projects</a></li>
-        <li><a href="blog.html">Lyrics &amp; Notes</a></li>
-        <li><a href="#Connect">Connect</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main class="page-shell">
-    <section class="hero" aria-labelledby="page-title">
-      <div class="hero-frame">
-        <p class="eyebrow">portfolio / archive / working craft</p>
-        <h1 id="page-title">Eidolon Sleep</h1>
-        <p class="tagline">builder of strange pages, hidden worlds, and songs buried deep</p>
-        <div class="relic-ticker" aria-label="Decorative portfolio statement">
-          <span>HTML bones · CSS candlework · code, fragments, signal</span>
-        </div>
-      </div>
+      <div class="mist"></div>
+      <div class="ground-line"></div>
     </section>
 
-    <div class="content-grid">
-      <aside class="side-panel" aria-label="Personal signs">
-        <section class="card sign-card">
-          <h2>Signs</h2>
-
-          <label for="light">Light</label>
-          <meter id="light" min="0" max="100" value="74">74%</meter>
-
-          <label for="growth">Growth</label>
-          <progress id="growth" max="100" value="63">63%</progress>
-
-          <label for="echoes">Echoes</label>
-          <meter id="echoes" min="0" max="100" value="88">88%</meter>
-
-          <q>What is buried may still rise.</q>
-        </section>
-
-        <section class="card symbol-card">
-          <h2>Symbols</h2>
-          <ul>
-            <li>☾ Quiet guidance</li>
-            <li>✿ Patient growth</li>
-            <li>⚰ Kept fragments</li>
-          </ul>
-        </section>
-
-        <section class="card symbol-card">
-          <h2>Archive Door</h2>
-          <p>Lyrics, music notes, image fragments, and influences live in the side chamber.</p>
-          <a class="panel-link" href="blog.html">Enter the archive</a>
-        </section>
-      </aside>
-
-      <div class="main-column">
-        <section id="About" class="card section-card">
-          <h2>About</h2>
-          <p>
-            I am learning to turn scattered curiosity into working structures: code, design,
-            writing, music, art, and discipline that survives ordinary days. I like projects with
-            a practical face and a strange pulse underneath.
-          </p>
-
-          <blockquote>
-            “A page can be plain and still carry weather. A skill can begin clumsy and still become a craft.”
-          </blockquote>
-
-          <details open>
-            <summary>What I am building toward</summary>
-            <p>
-              A life where technical skill and creative nerve are not separate rooms. I want to understand systems,
-              make useful things, and keep the work alive enough to avoid becoming mechanical.
-            </p>
-          </details>
-
-          <details>
-            <summary>Small symbols</summary>
-            <dl>
-              <dt>The Moon</dt>
-              <dd>Progress made while the whole road stays partly hidden.</dd>
-
-              <dt>The Garden</dt>
-              <dd>Growth that cannot be forced, only tended and revisited.</dd>
-
-              <dt>The Crypts</dt>
-              <dd>A chamber for fragments worth carrying: lessons, failures, old passions, and unfinished sparks.</dd>
-            </dl>
-          </details>
-        </section>
-
-        <section id="Experience" class="card section-card">
-          <h2>Experience</h2>
-
-          <ul class="experience-list">
-            <li>
-              <div class="experience-heading">
-                <h3>Food Service</h3>
-                <span>Practical work</span>
-              </div>
-              <p>Speed, cleanliness, pressure, repetition, responsibility, and the ability to keep moving when the room gets loud.</p>
-              <samp>reliable under pressure</samp>
-            </li>
-
-            <li>
-              <div class="experience-heading">
-                <h3>Web Development</h3>
-                <span>Current study</span>
-              </div>
-              <p>HTML, CSS, JavaScript fundamentals, debugging, GitHub, Git, layout, and small experiments that teach by breaking.</p>
-              <samp>developer in progress</samp>
-            </li>
-
-            <li>
-              <div class="experience-heading">
-                <h3>Creative Practice</h3>
-                <span>Ongoing craft</span>
-              </div>
-              <p>Gothic songwriting, visual design, music ideas, game worlds, and the search for atmosphere without cheap fog.</p>
-              <samp>atmosphere matters</samp>
-            </li>
-          </ul>
-
-          <p class="glyph-row" aria-hidden="true">☾ · ✿ · ⚰</p>
-        </section>
-
-        <section id="Skills" class="card section-card">
-          <h2>Skills</h2>
-          <ul class="skill-list">
-            <li>HTML structure</li>
-            <li>CSS layout and atmosphere</li>
-            <li>JavaScript fundamentals</li>
-            <li>Git and GitHub workflow</li>
-            <li>Song and lyric</li>
-            <li>Visual world-building</li>
-          </ul>
-        </section>
-
-        <section id="Projects" class="card section-card">
-          <h2>Projects</h2>
-          <div class="project-grid">
-            <article class="project-card">
-              <h3>Portfolio Site</h3>
-              <p>A personal landing page built from semantic HTML, custom CSS, and a cabinet-of-curiosities mood.</p>
-              <a href="#top">View this page</a>
-            </article>
-
-            <article class="project-card">
-              <h3>Lyrics &amp; Notes Archive</h3>
-              <p>A blog-like companion page for lyrics, recordings, influences, and image fragments.</p>
-              <a href="blog.html">Open archive</a>
-            </article>
-          </div>
-        </section>
-
-        <section id="Connect" class="card section-card">
-          <h2>Connect</h2>
-
-          <ul class="connect-list">
-            <li><a href="https://github.com/Joeypeck1987" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/joey-peck-66233b329/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-            <li><a href="mailto:Joeypeck1987@gmail.com">Email</a></li>
-            <li><a href="blog.html">Lyrics &amp; Notes</a></li>
-            <li><a href="#top">Return to the top</a></li>
-          </ul>
-
-          <form action="mailto:Joeypeck1987@gmail.com" method="post" enctype="text/plain" class="contact-form">
-            <fieldset>
-              <legend>Contact, by old machinery</legend>
-
-              <label for="name">Your name:</label>
-              <input id="name" name="name" size="30">
-
-              <label for="subject">Choose a subject:</label>
-              <input id="subject" list="subjects" name="subject">
-              <datalist id="subjects">
-                <option value="Portfolio"></option>
-                <option value="Collaboration"></option>
-                <option value="Job Opportunity"></option>
-                <option value="Creative Project"></option>
-                <option value="Music"></option>
-              </datalist>
-
-              <label for="message">Message:</label>
-              <textarea id="message" name="message" rows="5">Hello Joseph,</textarea>
-
-              <div class="button-row">
-                <button type="submit">Send via email client</button>
-                <button type="reset">Clear</button>
-              </div>
-            </fieldset>
-          </form>
-        </section>
-
-        <section id="Relics" class="card section-card relics-card">
-          <h2>Relics</h2>
-          <p>
-            This page keeps a few old-web fingerprints: meters, progress bars, details panels,
-            reversed text, and decorative markup used with restraint.
-          </p>
-
-          <div class="relic-table" aria-label="Portfolio relic information">
-            <span><bdo dir="rtl">Joseph Peck</bdo></span>
-            <time datetime="2026-05-09">May 9, 2026</time>
-          </div>
-
-          <address>Joseph Peck · portfolio and archive</address>
-        </section>
-      </div>
-    </div>
+    <h1 class="title"><span>Eidolon</span> <span>Sleep</span></h1>
+    <div class="star"></div>
   </main>
+</a>
 </body>
 </html>
+
